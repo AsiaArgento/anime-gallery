@@ -1,0 +1,107 @@
+// Base
+@import 'base/reset';
+@import 'base/variables';
+
+// Components
+@import 'components/typography';
+@import 'components/navigation';
+
+html, body {
+    height: 100%;
+    background-image: url(/cms-gallery/anime_pictures/anime-background.jpg);
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+
+a {
+    text-decoration: none;
+    color: $color-links;
+    // font-family: 'Helvetica', 'Arial', sans-serif;
+}
+
+/******* Main Content Admin Styles ********/
+
+.content-wrap {
+    display: flex;
+    align-items: center;
+    height: 100%;
+    justify-content: center;
+    padding: 0 4em;
+}
+.content {
+    display: flex;
+    flex-basis: 100%;
+    max-width: 1280px;
+    border-top: 2px #000 solid;
+    background-color: transparent;
+    padding: 2em;
+    list-style: none;
+    li {
+        padding: 15px 0;
+    }
+    &__box {
+        display: flex;
+        flex-direction: column;
+    }
+    &__box.left {
+        flex-basis: 30%;
+        a {
+            color: $color-links;
+            padding: 0.5rem 1rem;
+            transition: background-color 200ms ease-in-out;
+            &:hover,
+            &:focus {
+            background-color: $color-hover;
+            }
+        }
+        i {
+            color: $color-links;
+        }
+    }
+    &__box.right {
+        flex-basis: 70%;
+        background-color: #fff;
+        padding: 2em;
+        opacity: .9;
+        box-shadow: 0 0 10px gray;
+    }
+}
+
+/******* Main Content Styles ********/
+.main__container {
+    display: flex;
+    align-items: center;
+    height: 100%;
+    justify-content: center;
+    padding: 0 4em;
+    .main__content {
+        display: flex;
+        flex-basis: 100%;
+        max-width: 1280px;
+        border-top: 2px #000 solid;
+        background-color: transparent;
+        padding: 2em;
+        list-style: none;
+        .main__contentBox{
+            display: flex;
+            flex-direction: column;
+        }
+        .main__contentBox.left {
+            flex-basis: 70%;
+        }
+        .main__contentBox.right {
+            flex-basis: 30%;
+            gap: 1rem;
+            .box {
+                background-color: #fff;
+                padding: 2em;
+                border-radius: 3px;
+                box-shadow: 0 0 10px gray;
+                a {
+                    color: #222;
+                }
+            }
+        }
+    }
+}
