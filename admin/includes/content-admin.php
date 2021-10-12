@@ -11,6 +11,15 @@
         <div class="content__box right">
             <h1>Welcome to the Admin!</h1>
             <h2>Home</h2>
+            <?php 
+
+            $sql = "SELECT * FROM users WHERE id=1";
+            $result = $database->query($sql);
+            $user_found = mysqli_fetch_array($result);
+            
+            echo $user_found['username'];
+            
+            ?>
         </div>
     </section>
 </div>
