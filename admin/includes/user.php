@@ -9,18 +9,14 @@ class User {
     public $last_name;
     
     public static function find_all_users() {
-        // global $database;
-        // $result_set = $database->query("SELECT * FROM users");
-        // return $result_set;
         return self::find_this_query("SELECT * FROM users");
     }
 
     public static function find_user_by_id($user_id) {
         global $database;
-        // $result_set = $database->query("SELECT * FROM users WHERE id= $user_id LIMIT 1");
         $result_set = self::find_this_query("SELECT * FROM users WHERE id= $user_id LIMIT 1");
-        $found_user = mysqli_fetch_array($result_set);
-        return $found_user;
+        // if not empty, else return false, itinerary syntax
+        return !empty($result_set) ? array_shift($result_set) : false;
     }
 
     public static function find_this_query($sql) {
@@ -35,11 +31,6 @@ class User {
 
     public static function instantiation($found_user) {
         $user_object = new self;
-        // $user_object->id = $found_user['id'];
-        // $user_object->username = $found_user['username'];
-        // $user_object->password = $found_user['password'];
-        // $user_object->first_name = $found_user['first_name'];
-        // $user_object->last_name = $found_user['last_name'];
         foreach($found_user as $the_attribute => $value) {
             if($user_object->has_the_attribute($the_attribute)) {
                 $user_object->$the_attribute = $value;
