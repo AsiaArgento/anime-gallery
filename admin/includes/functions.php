@@ -1,4 +1,5 @@
 <?php 
+// Checks for missing classes / objects
 function classAutoLoader($class) {
     $class = strtolower($class);
     $the_path = "includes/{$class}.php";
