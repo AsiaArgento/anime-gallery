@@ -9,8 +9,10 @@
         <div class="navbar__rightMenu">
             <a class="link" href="#"><i class="fas fa-user"></i> Profile</a>
             <div class="navbar__submenu">
+                <a href="#">Profile</a>
+                <a href="#">Inbox</a>
                 <a href="#">Settings</a>
-                <a href="#">Email</a>
+                <a href="logout.php">Log Out</a>
             </div>            
         </div>
         

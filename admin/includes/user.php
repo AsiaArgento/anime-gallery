@@ -29,6 +29,21 @@ class User {
         return $user_object_array;
     }
 
+    public static function verify_user($username, $password) {
+        global $database;
+        $username = $database->escape_string($username);
+        $password = $database->escape_string($password);
+
+        $sql = "SELECT * FROM users WHERE ";
+        $sql .= "username = '{$username}' ";
+        $sql .= "AND password = '{$password}' ";
+        $sql .= "LIMIT 1";
+
+        $result_set = self::find_this_query($sql);
+        // if not empty, else return false, itinerary syntax
+        return !empty($result_set) ? array_shift($result_set) : false;
+    }
+
     public static function instantiation($found_user) {
         $user_object = new self;
         foreach($found_user as $the_attribute => $value) {
@@ -45,5 +60,7 @@ class User {
     }
 
 }
+
+$user = new User();
 
 ?>
