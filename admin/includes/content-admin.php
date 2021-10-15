@@ -13,31 +13,13 @@
             <h2>Home</h2>
             <?php 
 
-            // Returns all users by username
-            // $result_set = User::find_all_users();
-
-            // while($row = mysqli_fetch_array($result_set)) {
-            //     echo $row['username'] . "<br>";
-            // }
-
-            // Returns 1 user by id
-            // $found_user = User::find_user_by_id(3);
-            // $user = User::instantiation($found_user);
-
-            // echo $user->first_name;
-            // echo "<br>";
-
-            // OOP Version
-            // $users = User::find_all_users();
-            // foreach($users as $user) {
-            //     echo $user->id . "<br>";
-            // }
+         
 
             // Itinerary Syntax Version
             $found_user = User::find_user_by_id(2);
             echo $found_user->username;
 
-            // $pictures = new Picture();
+
             
             ?>
         </div>
