@@ -1,9 +1,11 @@
 <?php require_once("includes/header-admin.php"); ?>
+
 <?php 
 // if($session->is_signed_in()) {
 //     redirect("index.php");
 // }
 
+// checking for submissions
 if(isset($_POST['submit'])) {
     $username = trim($_POST['username']);
     $password = trim($_POST['password']);
@@ -19,6 +21,7 @@ if(isset($_POST['submit'])) {
     }
 
 } else {
+    $message = "";
     $username = "";
     $password = "";
 }

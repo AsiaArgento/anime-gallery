@@ -14,9 +14,9 @@ class User {
 
     public static function find_user_by_id($user_id) {
         global $database;
-        $result_set = self::find_this_query("SELECT * FROM users WHERE id= $user_id LIMIT 1");
+        $result_set_q = self::find_this_query("SELECT * FROM users WHERE id= $user_id LIMIT 1");
         // if not empty, else return false, itinerary syntax
-        return !empty($result_set) ? array_shift($result_set) : false;
+        return !empty($result_set_q) ? array_shift($result_set_q) : false;
     }
 
     public static function find_this_query($sql) {
@@ -39,9 +39,9 @@ class User {
         $sql .= "AND password = '{$password}' ";
         $sql .= "LIMIT 1";
 
-        $result_set = self::find_this_query($sql);
+        $result_array = self::find_this_query($sql);
         // if not empty, else return false, itinerary syntax
-        return !empty($result_set) ? array_shift($result_set) : false;
+        return !empty($result_array) ? array_shift($result_array) : false;
     }
 
     public static function instantiation($found_user) {
